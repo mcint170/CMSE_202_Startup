@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Getting_started_mac</title>
+<title>Getting_started_MAC</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13109,6 +13109,7 @@ div#notebook {
 <li><a href="#optionalmac">(Optional) Helpful Commands and Shortcuts</a><ul>
 <li><a href="#mac_home_short">Setting up Finder</a></li>
 <li><a href="#mac_where">Knowing Where You Are</a></li>
+<li><a href="#mac_path">Setting up Terminal to Show Full Path</a></li>
 <li><a href="#mac_command">Useful Commands</a></li>
 </ul>
 </li>
@@ -13284,6 +13285,17 @@ When starting up the terminal it is important to know where you are in the syste
  <img src="./images_mac/t_jup_b.png" alt="t_jup_b" width="500"/>  You can see all the files in the <code>Downloads</code> directory/folder by running the command <code>ls</code> and press <code>Enter</code>. Here, you may notice that in the photo there is a <code>.ipynb</code> in this directory. We can actually start up jupyter notebook in this directory from our terminal and open this file if we wish. You can do this by running the command <code>jupyter notebook</code>  and pressing <code>Enter</code>. This will open Jupyter Notebook in your current directory/folder (The <code>Downloads</code> folder).<br>
  <img src="./images_mac/t_jup.png" alt="t_jup" width="750"/><br>
  <img src="./images_mac/t_jup_c.png" alt="t_jup_c" width="500"/>  To close down Jupyter Notebooks close the browser and then type <kbd> control </kbd> + <kbd> c </kbd> twice in a row. <em>Note: You can go back to the home directory/folder by typing <code>cd ..</code> and pressing <code>Enter</code>. The <code>..</code> means "parent" directory/folder. Which just means the folder that the current folder belongs to. So the <code>Downloads</code> directory/folder belongs to the home directory/folder.</em></li>
+</ol>
+<p><a id="mac_path"></a><br>
+<strong>Setting up Terminal to Show Full Path</strong><br>
+As seen in the above section, when you change directories (folders) the terminal will display the name of the directory (folder) but not the full path (you will learn later in class what path means). This may not be apperent if you have not used terminal before, as showing the full path is a common thing to see when using other unix command lines. To enable this we just need to make a simple edit to your <code>.bash_profile</code></p>
+<ol>
+<li>Open terminal and open up <code>.bash_profile</code>.
+ <img src="./images_mac/path_open.png" alt="path_open" width="500"/>  Open terminal on your computer by using Spotlight by pressing <kbd> command </kbd> + <kbd> space-bar </kbd> or simply use the search bar in the top right corner search <code>terminal</code> and press <code>Enter</code>. Then in the terminal type <code>open -a TextEdit .bash_profile</code> and press <code>Enter</code> on the keyboard.</li>
+<li>Add <code>export PS1='\u@\H:\w$</code> just before <code># &gt;&gt;&gt; conda initalize &gt;&gt;</code><br>
+ <img src="./images_mac/path_profile.png" alt="path_profile" width="500"/>  Using the text editor, place this exact command <code>export PS1='\u@\H:\w$</code> just before <code># &gt;&gt;&gt; conda initalize &gt;&gt;</code>. This is very important that it comes before the <code>conda intilaize</code> block of code. Also it may try to autocorrect <code>export</code> to <code>Export</code>, this is not correct it needs to be lowercase. You may need to add a few lines using <code>Enter</code> in order to get the spacing as it is above. Once done you can simply close out of the TextEdit window.  </li>
+<li>Close the terminal and reopen terminal.
+ <img src="./images_mac/path_test.png" alt="path_profile" width="500"/> Closing the terminal and reopening it should yeild something like the above. You might not notice anything different. However, like we did above, "change directory" by typing <code>cd Downloads</code> and pressing <code>Enter</code> on the keyboard. Now you should see, how unlike before, you see your location in relation to the home folder <code>~/Downloads</code>. This will prove very useful later on in class.</li>
 </ol>
 <p><a id="mac_command"></a>
 <strong>Useful Commands</strong></p>
